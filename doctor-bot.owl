@@ -173,6 +173,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#DiabetesDisease -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#DiabetesDisease">
@@ -184,7 +192,7 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InvisibleSymptom"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
     </owl:Class>
     
 
@@ -210,6 +218,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AirborneDisease"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Headache"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Measles"/>
     </owl:Class>
     
@@ -331,6 +355,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Red">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#ColorChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
     </owl:Class>
     
 
@@ -519,17 +551,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AppetiteLoss"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Pain"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AppetiteLoss"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Pain"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness"/>
@@ -547,6 +568,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BleedingSymptom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#UrinaryProblem"/>
         </owl:members>

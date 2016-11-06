@@ -8,8 +8,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot">
-        <owl:versionInfo xml:lang="en">version 1.0.0</owl:versionInfo>
         <rdfs:comment xml:lang="en">A doctor bot ontology describing various diseases based on symptoms</rdfs:comment>
+        <owl:versionInfo xml:lang="en">version 1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -31,6 +31,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasComplication -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasComplication">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom">
@@ -42,7 +64,20 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Symptom"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -55,9 +90,51 @@
     
 
 
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isCausedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isCausedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasCauseOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isCausing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isCausing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isCausing">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasCauseOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isInfectedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isInfectedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasCauseOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isInfecting"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InfectiousDisease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isInfecting -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isInfecting">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasCauseOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+    </owl:ObjectProperty>
     
 
 
@@ -69,6 +146,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasNumPossibleSymptoms -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasNumPossibleSymptoms"/>
     
 
 
@@ -95,6 +178,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AbdominalPain">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Pain"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -107,27 +196,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Allergies -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Allergies">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NonInfectiousDisease"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#GenericDisease"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AppetiteLoss -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AppetiteLoss">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InvisibleSymptom"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BacteriaCaused -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BacteriaCaused">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
     </owl:Class>
     
 
@@ -148,11 +220,34 @@
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#CancerDisease -->
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#CancerDisease">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#GenericDisease"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#DiabetesDisease"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BleedingSymptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#GenericDisease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -173,18 +268,65 @@
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough -->
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#ComplicatedIllness -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#ComplicatedIllness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasComplication"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#DiabetesDisease -->
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#DiabetesDisease">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#GenericDisease"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#GenericDisease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -193,6 +335,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Malaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -200,8 +348,13 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Symptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Symptom"/>
-        <rdfs:label xml:lang="en">Disease</rdfs:label>
     </owl:Class>
     
 
@@ -210,6 +363,30 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InvisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Malaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -217,24 +394,25 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AirborneDisease"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough"/>
-                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
-                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Headache"/>
-                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose"/>
-                            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Measles"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -258,14 +436,64 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BloodBorneDisease"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AbdominalPain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#UrinaryProblem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BloodBorneDisease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSurgeryRequired"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasNumPossibleSymptoms"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -303,10 +531,77 @@
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Measles -->
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Malaria -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Measles">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AirborneDisease"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Malaria">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#MosquitoBorneDisease"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Fever"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasInvisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasDisease"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#MosquitoBorneDisease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#MosquitoBorneDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#MosquitoBorneDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InsectBorneDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NamedIllness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
     </owl:Class>
     
 
@@ -315,6 +610,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#NauseaOrVomiting">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InvisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Malaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -363,6 +670,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#RunnyOrStuffyNose">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -371,6 +684,46 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SeriousIllness">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSurgeryRequired"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinAllerge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinAllerge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinIllness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinIllness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasVisibleSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -379,6 +732,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinSymptom">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Urticaria"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -386,6 +745,12 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Symptom -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Symptom">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Symptom</rdfs:label>
     </owl:Class>
     
@@ -395,6 +760,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tiredness">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#InvisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diabetes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -403,14 +774,39 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#UrinaryProblem">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VisibleSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#isSymptomOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Hepatitis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VirusCaused -->
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Urticaria -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VirusCaused">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Illness"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Urticaria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SkinIllness"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#ColorChange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Itching"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#hasSymptom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Rash"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -445,7 +841,8 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BrainCancer -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BrainCancer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#CancerDisease"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer"/>
+        <doctor-bot:isSurgeryRequired xml:lang="5">1</doctor-bot:isSurgeryRequired>
     </owl:NamedIndividual>
     
 
@@ -453,7 +850,8 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BreastCancer -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BreastCancer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#CancerDisease"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer"/>
+        <doctor-bot:isSurgeryRequired xml:lang="5">1</doctor-bot:isSurgeryRequired>
     </owl:NamedIndividual>
     
 
@@ -469,7 +867,7 @@
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cold -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cold">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu"/>
+        <doctor-bot:hasNumPossibleSymptoms rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</doctor-bot:hasNumPossibleSymptoms>
         <doctor-bot:isSurgeryRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</doctor-bot:isSurgeryRequired>
     </owl:NamedIndividual>
     
@@ -501,16 +899,15 @@
 
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Influenza -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Influenza">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Flu"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Influenza"/>
     
 
 
     <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#LungCancer -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#LungCancer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#CancerDisease"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cancer"/>
+        <doctor-bot:isSurgeryRequired xml:lang="5">1</doctor-bot:isSurgeryRequired>
     </owl:NamedIndividual>
     
 
@@ -519,6 +916,22 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tuberculosis">
         <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#AirborneDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type1Diabetes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type1Diabetes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diabetes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type2Diabetes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type2Diabetes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diabetes"/>
     </owl:NamedIndividual>
     
 
@@ -559,14 +972,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BacteriaCaused"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#SeriousIllness"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#VirusCaused"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BleedingSymptom"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Cough"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Diarrhea"/>
@@ -593,6 +998,14 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BrainCancer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#BreastCancer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#LungCancer"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#ChickenPox"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Tuberculosis"/>
         </owl:distinctMembers>
@@ -610,6 +1023,13 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#HepatitisA"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#HepatitisB"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#HepatitisC"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type1Diabetes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#Type2Diabetes"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>

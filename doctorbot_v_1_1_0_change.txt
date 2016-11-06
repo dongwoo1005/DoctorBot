@@ -1,0 +1,76 @@
+NOTE: 
+* Compared to Pizza example, the class Illness is like 'pizza', Disease is like 'pizzaBase' and Symptom like 'pizzaToppings'
+* All named disease will go under 'Illness' class
+* Can we change name 'Disease' -> 'DiseaseType' and 'Illness' -> 'Disease'?
+
+TODO:
+	- More datatype properties and restriction would be good.
+	- Better Defined class and complex class? (if possible)
+
+
+Classes:
+** 'Disease' have changed to 'Diseasetypes'
+	- Disease hasSymptom some Sympton.
+		- Removed 'Flu', 'Measles'  from AirborneDisease
+		- Removed 'Hepatities' from BloodBorneDisease
+		- Removed 'Allergies' from Disease
+		- Removed 'Cancer' and 'Diabetes' under 'GenericDisease'
+		- Under InsectBorneDisease, added 'MosquitoBorneDisease'
+	- Symptom isSymptomOf some Disease.
+
+	- Illness -> removed BacteriaCaused and VirusCaused 
+	- Illness -> added SkinIllness (defined class), NamedIllness, ComplicatedIllness
+		SkinIllness hasVisibleSymptom some SkinSymptom
+			- 'Uriticaria' (두드러기)
+				- Uriticaria SkinIllness
+				- Uriticaria hasSymptom min 1 Rash
+				- Uriticaria hasSymptom some ColorChange
+				- Uriticaria hasSymptom some Itching
+		ComplicatedIllness hasComplication some Disease AND hasDisease min 2 Disease (Defined class)
+
+	- Illness isSurgeryRequired some xsd:boolean.
+	- Illness hasDiseases some Disease.
+	- Illness hasNumPossibleSymptoms min 1 xsd:int
+	- SeriousIllness is NOT disjoint with BacteriaCaused and VirusCaused Illness
+	- SeriousIllness is Illness with isSurgeryRequired exactly 1 xsd:boolean.
+	- NamedIllness:
+		- added 'Flu' (Defined class)
+			- Flu hasDisease only AirborneDisease
+			- Flu hasInvisibleSymptom some Fever
+			- Flu hasVisibleSymptom some Cough
+			- Flu hasVisibleSymptom some RunnyOrStuffyNose
+		- 'Hepatitis'
+			- Hepatitis hasDisease only BloodBorneDisease
+			- Hepatitis hasInvisibleSymptom some AbdominalPain, Fever, NauseaOrVomiting
+			- Hepatitis hasVisibleSymptom some UrinaryProblem
+			- added individuals Hepatitis A,B, C
+		- Cancer
+			- Cancer hasDisease only GenericDisease
+			- Cancer hasInvisibleSymptom some Fever
+			- Cancer hasVisibleSymptom some BleedingSymptom, SkinSymptom
+		- 'Malaria' (Complex class)
+			- Malaria hasDisease only MosquitoBorneDisease
+			- Malaria hasInvisibleSymptom some Fever, NauseaOrVomiting
+			- Malaria hasVisibleSymptom some Diarrhea
+		- 'Diabetes'
+			- Diabetes hasDisease only GenericDisease
+			- Diabetes hasInvisibleSymptom some tiredness
+			- Diabetes hasVisibleSymptom some SkinSymptom
+
+
+Object Property:
+	- Created object property hasDisease, and moved isSymptomOf and hasSymptom as a subclass of hasDisease.
+	- New object property hasComplication(합병증) under hasDisease
+	- hasComplication
+		domain: hasDisease min 2 Disease (min cardinality)
+		
+	- isInfectedFrom (Universal Restrictions)
+		domain: hasDisease only InfectiousDisease
+
+	- hasSymptom (Existential restrictions)
+		Domain: hasSymptom some Disease
+		Range: hasSymptom some Symptom
+
+Data Properties:
+	- hasNumPossibleSymptoms (Not used??)
+	- isSurgeryRequired

@@ -1,0 +1,1106 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot">
+    <Prefix name="" IRI="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="doctor-bot" IRI="http://www.semanticweb.org/dongwoo/ontologies/doctor-bot#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A doctor bot ontology describing various diseases based on symptoms</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">version 1.2.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AppetiteLoss"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Headache"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BleedingSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChestPain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Urticaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbdominalPain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InsectBorneDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BrainCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkinDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diarrhea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ColorChange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChickenPox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkinSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkinAllerge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cancer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fever"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GenericDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComplicatedDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Symptom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumPossibleSymptoms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rash"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Influenza"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Itching"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonInfectiousDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UrinaryProblem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Flu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeriousDisease"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NamedDisease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HepatitisA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hepatitis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BloodBorneDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MosquitoBorneDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Red"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InfectiousDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tiredness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirborneDiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InvisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Malaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cough"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInvisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HepatitisB"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSymptomOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BreastCancer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasComplication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RunnyOrStuffyNose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiseaseType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Yellow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cold"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NauseaOrVomiting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HepatitisC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LungCancer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isSurgeryRequired"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diabetes"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ComplicatedDisease"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Disease"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasComplication"/>
+                <Class IRI="#DiseaseType"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasDisease"/>
+                <Class IRI="#DiseaseType"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Flu"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#NamedDisease"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasInvisibleSymptom"/>
+                <Class IRI="#Fever"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasVisibleSymptom"/>
+                <Class IRI="#Cough"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasVisibleSymptom"/>
+                <Class IRI="#RunnyOrStuffyNose"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Malaria"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#NamedDisease"/>
+            <ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasInvisibleSymptom"/>
+                    <Class IRI="#Fever"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasInvisibleSymptom"/>
+                    <Class IRI="#NauseaOrVomiting"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasVisibleSymptom"/>
+                    <Class IRI="#Diarrhea"/>
+                </ObjectSomeValuesFrom>
+            </ObjectUnionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasDisease"/>
+                <Class IRI="#MosquitoBorneDiseaseType"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SkinDisease"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Disease"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasVisibleSymptom"/>
+                <Class IRI="#SkinSymptom"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AbdominalPain"/>
+        <Class IRI="#Pain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbdominalPain"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Hepatitis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirborneDiseaseType"/>
+        <Class IRI="#InfectiousDiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AppetiteLoss"/>
+        <Class IRI="#InvisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BleedingSymptom"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BloodBorneDiseaseType"/>
+        <Class IRI="#InfectiousDiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <Class IRI="#NamedDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#Fever"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#BleedingSymptom"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#SkinSymptom"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#GenericDiseaseType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChestPain"/>
+        <Class IRI="#Pain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ColorChange"/>
+        <Class IRI="#SkinSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cough"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cough"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Flu"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diabetes"/>
+        <Class IRI="#NamedDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diabetes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#Tiredness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diabetes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#SkinSymptom"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diabetes"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#GenericDiseaseType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diarrhea"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diarrhea"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Malaria"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disease"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#DiseaseType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disease"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#isSurgeryRequired"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disease"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasNumPossibleSymptoms"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiseaseType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#Symptom"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fever"/>
+        <Class IRI="#InvisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fever"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Cancer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fever"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Flu"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fever"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Hepatitis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fever"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Malaria"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GenericDiseaseType"/>
+        <Class IRI="#NonInfectiousDiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Headache"/>
+        <Class IRI="#Pain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <Class IRI="#NamedDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#AbdominalPain"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#Fever"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#NauseaOrVomiting"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#UrinaryProblem"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hepatitis"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#BloodBorneDiseaseType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InfectiousDiseaseType"/>
+        <Class IRI="#DiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InsectBorneDiseaseType"/>
+        <Class IRI="#InfectiousDiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvisibleSymptom"/>
+        <Class IRI="#Symptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Itching"/>
+        <Class IRI="#SkinSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Malaria"/>
+        <Class IRI="#NamedDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Malaria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#Fever"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Malaria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInvisibleSymptom"/>
+            <Class IRI="#NauseaOrVomiting"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Malaria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#Diarrhea"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Malaria"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#MosquitoBorneDiseaseType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MosquitoBorneDiseaseType"/>
+        <Class IRI="#InsectBorneDiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NamedDisease"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NauseaOrVomiting"/>
+        <Class IRI="#InvisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NauseaOrVomiting"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Hepatitis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NauseaOrVomiting"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Malaria"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonInfectiousDiseaseType"/>
+        <Class IRI="#DiseaseType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pain"/>
+        <Class IRI="#InvisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pale"/>
+        <Class IRI="#ColorChange"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rash"/>
+        <Class IRI="#SkinSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Red"/>
+        <Class IRI="#ColorChange"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RunnyOrStuffyNose"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RunnyOrStuffyNose"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Flu"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeriousDisease"/>
+        <Class IRI="#Disease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeriousDisease"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#isSurgeryRequired"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinAllerge"/>
+        <Class IRI="#SkinDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinAllerge"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasVisibleSymptom"/>
+            <Class IRI="#SkinSymptom"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinSymptom"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkinSymptom"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Urticaria"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Symptom"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#DiseaseType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tiredness"/>
+        <Class IRI="#InvisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tiredness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Diabetes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UrinaryProblem"/>
+        <Class IRI="#VisibleSymptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UrinaryProblem"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSymptomOf"/>
+            <Class IRI="#Hepatitis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Urticaria"/>
+        <Class IRI="#SkinDisease"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Urticaria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#ColorChange"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Urticaria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#Itching"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Urticaria"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#Rash"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisibleSymptom"/>
+        <Class IRI="#Symptom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Yellow"/>
+        <Class IRI="#ColorChange"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AbdominalPain"/>
+        <Class IRI="#ChestPain"/>
+        <Class IRI="#Headache"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AirborneDiseaseType"/>
+        <Class IRI="#BloodBorneDiseaseType"/>
+        <Class IRI="#InsectBorneDiseaseType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AppetiteLoss"/>
+        <Class IRI="#NauseaOrVomiting"/>
+        <Class IRI="#Pain"/>
+        <Class IRI="#Tiredness"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BleedingSymptom"/>
+        <Class IRI="#Cough"/>
+        <Class IRI="#Diarrhea"/>
+        <Class IRI="#SkinSymptom"/>
+        <Class IRI="#UrinaryProblem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ColorChange"/>
+        <Class IRI="#Itching"/>
+        <Class IRI="#Rash"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DiseaseType"/>
+        <Class IRI="#Symptom"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InfectiousDiseaseType"/>
+        <Class IRI="#NonInfectiousDiseaseType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InvisibleSymptom"/>
+        <Class IRI="#VisibleSymptom"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Pale"/>
+        <Class IRI="#Red"/>
+        <Class IRI="#Yellow"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Cancer"/>
+        <NamedIndividual IRI="#BrainCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SeriousDisease"/>
+        <NamedIndividual IRI="#BrainCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cancer"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SeriousDisease"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SkinDisease"/>
+        <NamedIndividual IRI="#ChickenPox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Flu"/>
+        <NamedIndividual IRI="#Cold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hepatitis"/>
+        <NamedIndividual IRI="#HepatitisA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hepatitis"/>
+        <NamedIndividual IRI="#HepatitisB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SeriousDisease"/>
+        <NamedIndividual IRI="#HepatitisB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hepatitis"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SeriousDisease"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Flu"/>
+        <NamedIndividual IRI="#Influenza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cancer"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SeriousDisease"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diabetes"/>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ComplicatedDisease"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diabetes"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GenericDiseaseType"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NonInfectiousDiseaseType"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diabetes"/>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#BrainCancer"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Cold"/>
+        <NamedIndividual IRI="#Influenza"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#HepatitisA"/>
+        <NamedIndividual IRI="#HepatitisB"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+    </DifferentIndividuals>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#BrainCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#BrainCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#BrainCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#BreastCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#ChickenPox"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#ChickenPox"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#ChickenPox"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#Cold"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#Cold"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#Cold"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#HepatitisA"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#HepatitisA"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#HepatitisA"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#HepatitisB"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#HepatitisB"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#HepatitisC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#Influenza"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#Influenza"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#Influenza"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#Type1Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#Type1DiabetesWithNeuropathy"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <NamedIndividual IRI="#Type2Diabetes"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasComplication"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInvisibleSymptom"/>
+        <ObjectProperty IRI="#hasSymptom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSymptom"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasVisibleSymptom"/>
+        <ObjectProperty IRI="#hasSymptom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSymptomOf"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSymptom"/>
+        <ObjectProperty IRI="#isSymptomOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDisease"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasDisease"/>
+            <Class IRI="#DiseaseType"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSymptom"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#DiseaseType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSymptom"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSymptom"/>
+            <Class IRI="#Symptom"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInvisibleSymptom"/>
+        <DataProperty IRI="#hasNumPossibleSymptoms"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasVisibleSymptom"/>
+        <DataProperty IRI="#hasNumPossibleSymptoms"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isSurgeryRequired"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Symptom</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Symptom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInvisibleSymptom</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasInvisibleSymptom counts the number of invisible symptoms for disease</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasVisibleSymptom</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasVisibleSymptom counts the number of visible symptoms possible to the disease</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSurgeryRequired</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isSurgeryRequired has boolean value that determines the disease requires surgery as a cure.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

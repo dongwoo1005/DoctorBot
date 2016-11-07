@@ -1,0 +1,12 @@
+# doctorBot v.1.2.0 - Change note
+
+Previously 'Disease' classes changed to 'DiseaseType'
+Previously 'Illness' classes changed to 'Disease'
+
+Removed Object Property 'hasCouseOf' removed.
+
+Added data property assertions 'hasVisibleSymptom' and 'hasInvisibleSymptom' to individuals
+
+ComplicatedInvididual 'Type1DiabetesWithNeuropathy' added.
+
+Word document file name changed, and references added.
